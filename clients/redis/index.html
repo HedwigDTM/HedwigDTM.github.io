@@ -9,34 +9,33 @@
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Welcome to hedwig</title>
-    <meta name="title" content="Welcome to hedwig">
-    <meta name="description" content="hedwig is a distributed transaction manager, designed to simplify complex workflows involving interactions with multiple third-party resources.">
+    <title>Redis</title>
+    <meta name="title" content="Redis">
+    <meta name="description" content="The Redis Client in hedwig provides a straightforward way to interact with Redis, a fast, in-memory data store used frequently for caching, session...">
 
     <!-- Canonical -->
-    <link rel="canonical" href="/">
+    <link rel="canonical" href="/clients/redis/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="/">
-    <meta property="og:title" content="Welcome to hedwig">
-    <meta property="og:description" content="hedwig is a distributed transaction manager, designed to simplify complex workflows involving interactions with multiple third-party resources.">
-    <meta property="og:image" content="/static/logo.png">
+    <meta property="og:url" content="/clients/redis/">
+    <meta property="og:title" content="Redis">
+    <meta property="og:description" content="The Redis Client in hedwig provides a straightforward way to interact with Redis, a fast, in-memory data store used frequently for caching, session...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="/">
-    <meta property="twitter:title" content="Welcome to hedwig">
-    <meta property="twitter:description" content="hedwig is a distributed transaction manager, designed to simplify complex workflows involving interactions with multiple third-party resources.">
-    <meta property="twitter:image" content="/static/logo.png">
+    <meta property="twitter:url" content="/clients/redis/">
+    <meta property="twitter:title" content="Redis">
+    <meta property="twitter:description" content="The Redis Client in hedwig provides a straightforward way to interact with Redis, a fast, in-memory data store used frequently for caching, session...">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="resources/css/retype.css?v=3.6.0.784489318288" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.784489318288" rel="stylesheet">
 
-    <script data-cfasync="false" src="resources/js/config.js?v=3.6.0.784489318288" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="resources/js/lunr.js?v=3.6.0.784489318288" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.784489318288" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.784489318288" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.784489318288" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -51,7 +50,7 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="" class="flex items-center leading-snug text-2xl">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-2xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">hedwig</span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
                     </div>
@@ -151,94 +150,45 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<p><figure class="content-center">
-    <img src="static/logo.png" alt="">
-    <figcaption class="caption"></figcaption>
-</figure>
-</p>
-<doc-anchor-target id="welcome-to-hedwig" class="break-words">
+<doc-anchor-target id="redis" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#welcome-to-hedwig">#</doc-anchor-trigger>
-        <span>Welcome to hedwig</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#redis">#</doc-anchor-trigger>
+        <span>Redis</span>
     </h1>
 </doc-anchor-target>
-<p><a href="https://github.com/hedwigDTM/hedwig">hedwig</a> is a distributed transaction manager, designed to simplify complex workflows involving interactions with multiple third-party resources.
-It provides a reliable, simplified approach to orchestrating and managing transactions across distributed systems, ensuring efficient and consistent operations.</p>
-<hr>
-<doc-anchor-target id="quick-installation">
+<p>The Redis Client in <code v-pre>hedwig</code> provides a straightforward way to interact with Redis, a fast, in-memory data store used frequently for caching, session management, and real-time analytics.</p>
+<doc-anchor-target id="redis-client-configuration">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#quick-installation">#</doc-anchor-trigger>
-        <span>Quick Installation</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#redis-client-configuration">#</doc-anchor-trigger>
+        <span>Redis Client Configuration</span>
     </h2>
 </doc-anchor-target>
-<p>From your command line, navigate to your project directory -</p>
-<doc-tabs>
-<doc-tab v-cloak id="npm">
-<template #title>NPM</template>
+<p>To configure the Redis Client, provide an object of type <code v-pre>RedisConfig</code>, which extends <code v-pre>RedisClientOptions</code> from the <a href="https://www.npmjs.com/package/redis">redis</a> package. Additionally, you can specify:</p>
+<ul>
+<li><code v-pre>rollbackStrategy</code> (optional) – Defines the rollback approach used during transaction errors (either IN_MEMORY or DUPLICATE_FILE)</li>
+<li><code v-pre>backupHashName</code> (optional) – Specifies the Redis hash name used for backups when using the DUPLICATE_FILE strategy.</li>
+</ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">npm install hedwig
-npm install --save-dev @types/hedwig</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">export type RedisConfig = RedisClientOptions &amp; {
+  rollbackStrategy?: RedisRollbackStrategyType; // IN_MEMORY or DUPLICATE_FILE
+  backupHashName?: string;
+};</code></pre>
 </doc-codeblock></div>
-</doc-tab>
-<doc-tab v-cloak id="yarn">
-<template #title>Yarn</template>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">yarn add hedwig
-yarn add --dev @types/hedwig-framework</code></pre>
-</doc-codeblock></div>
-</doc-tab>
-<doc-tab v-cloak id="pnpm">
-<template #title>pnpm</template>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">pnpm add hedwig
-pnpm add -D @types/hedwig</code></pre>
-</doc-codeblock></div>
-</doc-tab>
-</doc-tabs>
-<hr>
-<doc-anchor-target id="features">
+<doc-anchor-target id="available-actions">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#features">#</doc-anchor-trigger>
-        <span>Features</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#available-actions">#</doc-anchor-trigger>
+        <span>Available Actions</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="distributed-transaction-management">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#distributed-transaction-management">#</doc-anchor-trigger>
-        <span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M15 4.75a3.25 3.25 0 1 1 6.5 0 3.25 3.25 0 0 1-6.5 0ZM2.5 19.25a3.25 3.25 0 1 1 6.5 0 3.25 3.25 0 0 1-6.5 0Zm0-14.5a3.25 3.25 0 1 1 6.5 0 3.25 3.25 0 0 1-6.5 0ZM5.75 6.5a1.75 1.75 0 1 0-.001-3.501A1.75 1.75 0 0 0 5.75 6.5Zm0 14.5a1.75 1.75 0 1 0-.001-3.501A1.75 1.75 0 0 0 5.75 21Zm12.5-14.5a1.75 1.75 0 1 0-.001-3.501A1.75 1.75 0 0 0 18.25 6.5Z"/><path d="M5.75 16.75A.75.75 0 0 1 5 16V8a.75.75 0 0 1 1.5 0v8a.75.75 0 0 1-.75.75Z"/><path d="M17.5 8.75v-1H19v1a3.75 3.75 0 0 1-3.75 3.75h-7a1.75 1.75 0 0 0-1.75 1.75H5A3.25 3.25 0 0 1 8.25 11h7a2.25 2.25 0 0 0 2.25-2.25Z"/></g></g></svg> Distributed Transaction Management</span>
-    </h4>
-</doc-anchor-target>
-<p>Simplifies the management of distributed transactions by handling various third-party and external services in a single, cohesive flow.</p>
-<doc-anchor-target id="automatic-rollback">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automatic-rollback">#</doc-anchor-trigger>
-        <span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M11.998 2.5A9.503 9.503 0 0 0 3.378 8H5.75a.75.75 0 0 1 0 1.5H2a1 1 0 0 1-1-1V4.75a.75.75 0 0 1 1.5 0v1.697A10.997 10.997 0 0 1 11.998 1C18.074 1 23 5.925 23 12s-4.926 11-11.002 11C6.014 23 1.146 18.223 1 12.275a.75.75 0 0 1 1.5-.037 9.5 9.5 0 0 0 9.498 9.262c5.248 0 9.502-4.253 9.502-9.5s-4.254-9.5-9.502-9.5Z"/><path d="M12.5 7.25a.75.75 0 0 0-1.5 0v5.5c0 .27.144.518.378.651l3.5 2a.75.75 0 0 0 .744-1.302L12.5 12.315V7.25Z"/></g></g></svg> Automatic Rollback</span>
-    </h4>
-</doc-anchor-target>
-<p>Supports multiple rollback strategies tailored to different types of resources, allowing control over how failures are handled.</p>
-<doc-anchor-target id="typescript-ready">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#typescript-ready">#</doc-anchor-trigger>
-        <span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M12 2.5c-3.81 0-6.5 2.743-6.5 6.119 0 1.536.632 2.572 1.425 3.56.172.215.347.422.527.635l.096.112c.21.25.427.508.63.774.404.531.783 1.128.995 1.834a.75.75 0 0 1-1.436.432c-.138-.46-.397-.89-.753-1.357a18.111 18.111 0 0 0-.582-.714l-.092-.11c-.18-.212-.37-.436-.555-.667C4.87 12.016 4 10.651 4 8.618 4 4.363 7.415 1 12 1s8 3.362 8 7.619c0 2.032-.87 3.397-1.755 4.5-.185.23-.375.454-.555.667l-.092.109c-.21.248-.405.481-.582.714-.356.467-.615.898-.753 1.357a.751.751 0 0 1-1.437-.432c.213-.706.592-1.303.997-1.834.202-.266.419-.524.63-.774l.095-.112c.18-.213.355-.42.527-.634.793-.99 1.425-2.025 1.425-3.561C18.5 5.243 15.81 2.5 12 2.5ZM8.75 18h6.5a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1 0-1.5Zm.75 3.75a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 0 1.5h-3.5a.75.75 0 0 1-.75-.75Z"/></g></g></svg> TypeScript-Ready</span>
-    </h4>
-</doc-anchor-target>
-<p>Built with TypeScript, offering full type safety and an improved developer experience.</p>
-<doc-anchor-target id="modular-and-lightweight">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#modular-and-lightweight">#</doc-anchor-trigger>
-        <span><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M15.716 1.329a1.341 1.341 0 0 1 2.109 1.55L15.147 9h4.161c1.623 0 2.372 2.016 1.143 3.075L8.102 22.721a1.148 1.148 0 0 1-1.81-1.317L8.996 15H4.674c-1.619 0-2.37-2.008-1.148-3.07l12.19-10.6Zm.452 1.595L4.51 13.061a.25.25 0 0 0 .164.439h5.45a.749.749 0 0 1 .692 1.041l-2.559 6.066 11.215-9.668a.25.25 0 0 0-.164-.439H14a.75.75 0 0 1-.687-1.05Z"/></g></g></svg> Modular and Lightweight</span>
-    </h4>
-</doc-anchor-target>
-<p>Designed to be easy to integrate and extend, allowing for seamless customization to fit specific workflow needs.</p>
-<hr>
-<doc-anchor-target id="contact-us">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#contact-us">#</doc-anchor-trigger>
-        <span>Contact Us</span>
-    </h2>
-</doc-anchor-target>
-<p>For any questions, feedback, or contributions, feel free to reach out to us through our <a href="https://github.com/hedwigDTM/hedwig">GitHub repository</a>. We welcome issues, discussions, and pull requests from the community!</p>
-<p>We <span class="docs-emoji">&#x2764;&#xFE0F;</span> feedback.</p>
+<p><code v-pre>hedwig</code>&#x27;s Redis Client supports the following actions:</p>
+<ul>
+<li><code v-pre>get</code>: Retrieves the value of a specified key.</li>
+<li><code v-pre>set</code>: Sets a value for a specified key.</li>
+<li><code v-pre>del</code>: Deletes a specified key.</li>
+<li><code v-pre>incr</code>: Increments the integer value of a specified key by one.</li>
+<li><code v-pre>decr</code>: Decrements the integer value of a specified key by one.</li>
+</ul>
+<p>These actions enable easy interaction with Redis, and each action supports rollback strategies to ensure transactional consistency across workflows.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -248,16 +198,16 @@ pnpm add -D @types/hedwig</code></pre>
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../clients/aws_s3/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">AWS S​3</span>
+                                            </span>
+                                        </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l rounded-r-lg transition-colors duration-150 relative hover:z-5" href="use_case/">
-                                            <span>
-                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Use Case</span>
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                        </a>
                                     </div>
                                 </nav>
                             </footer>
@@ -298,6 +248,6 @@ pnpm add -D @types/hedwig</code></pre>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Welcome", isRoot: true, level: 0, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Redis", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
