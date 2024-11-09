@@ -4,15 +4,15 @@ icon: home
 ---
 ![](/static/logo.png)
 
-# Welcome to Hedwig
+# Welcome to hedwig
 
-[Hedwig](https://github.com/HedwigDTM/hedwig) is a distributed transaction manager, designed to simplify complex workflows involving interactions with multiple third-party resources.
+[hedwig](https://github.com/hedwigDTM/hedwig) is a distributed transaction manager, designed to simplify complex workflows involving interactions with multiple third-party resources.
 It provides a reliable, simplified approach to orchestrating and managing transactions across distributed systems, ensuring efficient and consistent operations.
 
 
 ---
 
-## Quick start
+## Quick Installation
 From your command line, navigate to your project directory - 
 
 +++ NPM
@@ -52,6 +52,6 @@ Designed to be easy to integrate and extend, allowing for seamless customization
 
 ## Contact Us
 
-For any questions, feedback, or contributions, feel free to reach out to us through our [GitHub repository](https://github.com/HedwigDTM/hedwig). We welcome issues, discussions, and pull requests from the community!
+For any questions, feedback, or contributions, feel free to reach out to us through our [GitHub repository](https://github.com/hedwigDTM/hedwig). We welcome issues, discussions, and pull requests from the community!
 
 We :heart: feedback.
