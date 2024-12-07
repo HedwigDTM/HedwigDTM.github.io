@@ -1,7 +1,6 @@
 ---
 label: "Known Bugs"
 icon: bug
-order: 2000
 ---
 
 ## Known Bugs
