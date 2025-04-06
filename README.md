@@ -17,18 +17,7 @@ From your command line, navigate to your project directory -
 
 +++ NPM
 ```
-npm install hedwig
-npm install --save-dev @types/hedwig
-```
-+++ Yarn
-```
-yarn add hedwig
-yarn add --dev @types/hedwig-framework
-```
-+++ pnpm
-```
-pnpm add hedwig
-pnpm add -D @types/hedwig
+npm i @hedwig-team/dtm
 ```
 +++
 
